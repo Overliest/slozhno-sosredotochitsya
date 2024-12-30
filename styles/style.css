@@ -182,8 +182,7 @@
   color: var(--subtitle-color);
 }
 
-.section:nth-of-type(1) .section_list,
-.section:nth-of-type(3) .section_list {
+.section_column {
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
@@ -191,11 +190,7 @@
   width: 66%;
 }
 
-.section:nth-of-type(2) {
-  flex-direction: column;
-}
-
-.section:nth-of-type(2) .section_list {
+.section_row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -203,7 +198,37 @@
   width: 100%;
 }
 
-.section:nth-of-type(2) .section_list-item {
+.section_hard_concentration {
+  display: flex;
+}
+
+.section_concentration_decrease {
+  display: flex;
+  flex-direction: column;
+}
+
+.section_gold_fish {
+  display: flex;
+}
+
+.section_hard_concentration .section_list,
+.section_gold_fish .section_list {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  gap: 20px;
+  width: 66%;
+}
+
+.section_concentration_decrease .section_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.section_concentration_decrease .section_list-item {
   flex-basis: calc(33.33% - 13.33px);
 }
 
@@ -314,12 +339,19 @@
     width: 65%;
   }
 
-  .section:nth-of-type(2) .section_list {
+  .section_concentration_decrease .section_list {
+    width: 100%;
     flex-direction: column;
   }
 
-  .section:nth-of-type(3) .section_title {
+  .section_gold_fish .section_title {
     width: 32%;
+  }
+}
+
+@media (768px < width <= 1023px) {
+  .header_subtitle {
+    margin-top: 1%;
   }
 }
 
@@ -363,15 +395,15 @@
     margin-left: 1%;
   }
 
-  .section:nth-of-type(1),
-  .section:nth-of-type(3) {
+  .section_hard_concentration,
+  .section_gold_fish {
     flex-direction: column;
   }
 
-  .section:nth-of-type(1) .section_title,
-  .section:nth-of-type(3) .section_title,
-  .section:nth-of-type(1) .section_list,
-  .section:nth-of-type(3) .section_list,
+  .section_hard_concentration .section_title,
+  .section_gold_fish .section_title,
+  .section_hard_concentration .section_list,
+  .section_gold_fish .section_list,
   .section_title {
     width: 100%;
   }
